@@ -1,7 +1,6 @@
-import 'package:diz_ai_maua/pages/home_page_professor.dart';
 import 'package:diz_ai_maua/pages/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:diz_ai_maua/pages/main_page.dart';
+import 'package:diz_ai_maua/pages/student_main_page.dart';
 
 class DizAi extends StatelessWidget {
   const DizAi({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class DizAi extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diz Aí Maua!!',
-      home: MainPage(),
+      home: LoginPage(),
     );
   }
 }

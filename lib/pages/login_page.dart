@@ -1,4 +1,4 @@
-import 'package:diz_ai_maua/pages/home_page_professor.dart';
+import 'package:diz_ai_maua/pages/student_main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -76,7 +76,7 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: ((context) {
-                        return const HomePageProfessor();
+                        return const StudentMainPage();
                       })));
                     },
                     child: Text('Login')),
