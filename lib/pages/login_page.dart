@@ -1,3 +1,4 @@
+import 'package:diz_ai_maua/pages/home_page_professor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,14 +8,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(9, 65, 179, 20),
       body: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomRight,
-          stops: [0.2, 1],
-          colors: [Colors.white, Color.fromRGBO(8, 62, 167, 30)],
-        )),
         child: SizedBox(
           width: double.infinity,
           height: double.infinity,
@@ -28,17 +23,20 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   width: 200,
                   height: 100,
-                  child: Image.asset('assets/images/logo.png'),
+                  child: Image.asset('assets/images/logo2.png'),
+                ),
+                const SizedBox(
+                  height: 15,
                 ),
                 Text(
                   'Diz Aí',
                   style: GoogleFonts.pacifico(
-                      fontSize: 20, color: Color.fromRGBO(22, 78, 135, 10)),
+                      fontSize: 20, color: Color.fromARGB(246, 255, 255, 255)),
                 ),
                 Text(
                   'Maua',
                   style: GoogleFonts.pacifico(
-                      fontSize: 16, color: Color.fromRGBO(22, 78, 135, 10)),
+                      fontSize: 16, color: Color.fromARGB(246, 255, 255, 255)),
                 ),
                 const SizedBox(
                   height: 25,
@@ -48,40 +46,40 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(
                       fontFamily: 'Supreme',
                       fontSize: 16,
-                      color: Color.fromRGBO(22, 78, 135, 10)),
+                      color: Color.fromARGB(246, 255, 255, 255)),
                 ),
                 const SizedBox(
                   height: 140,
                 ),
-                TextField(
+                TextFormField(
+                  style: TextStyle(color: Colors.white),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    labelText: 'Email',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                        borderSide: const BorderSide(color: Colors.white)),
-                  ),
+                      labelText: 'Email',
+                      labelStyle: TextStyle(color: Colors.white)),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                TextField(
+                TextFormField(
+                  style: TextStyle(color: Colors.white),
                   obscureText: true,
                   decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    labelText: 'Password',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                        borderSide: const BorderSide(color: Colors.white)),
-                  ),
+                      hoverColor: Colors.white,
+                      labelText: 'Password',
+                      labelStyle: TextStyle(color: Colors.white)),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                ElevatedButton(onPressed: () {}, child: Text('Login')),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) {
+                        return const HomePageProfessor();
+                      })));
+                    },
+                    child: Text('Login')),
                 const SizedBox(
                   height: 22,
                 ),
@@ -95,7 +93,7 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(
                           fontFamily: 'Supreme',
                           fontSize: 16,
-                          color: Color.fromRGBO(22, 78, 135, 10)),
+                          color: Color.fromARGB(246, 255, 255, 255)),
                     ),
                     TextButton(
                       onPressed: () {},
@@ -119,7 +117,7 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(
                           fontFamily: 'Supreme',
                           fontSize: 16,
-                          color: Color.fromRGBO(22, 78, 135, 10)),
+                          color: Color.fromARGB(246, 255, 255, 255)),
                     ),
                     TextButton(
                       onPressed: () {},

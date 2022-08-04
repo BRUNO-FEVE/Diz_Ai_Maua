@@ -1,3 +1,4 @@
+import 'package:diz_ai_maua/pages/home_page_professor.dart';
 import 'package:diz_ai_maua/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
