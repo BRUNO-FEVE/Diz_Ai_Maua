@@ -1,5 +1,7 @@
+import 'package:diz_ai_maua/pages/loading_screen_for_login.dart';
 import 'package:diz_ai_maua/pages/student_main_page.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
@@ -20,18 +22,22 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 150,
                 ),
-                SizedBox(
-                  width: 200,
-                  height: 100,
-                  child: Image.asset('assets/images/logo2.png'),
-                ),
                 const SizedBox(
-                  height: 15,
+                    width: 200,
+                    height: 100,
+                    child: Icon(
+                      FontAwesomeIcons.paperPlane,
+                      color: Colors.white,
+                      size: 90,
+                    )),
+                const SizedBox(
+                  height: 20,
                 ),
                 Text(
                   'Diz Aí',
                   style: GoogleFonts.pacifico(
-                      fontSize: 20, color: Color.fromARGB(246, 255, 255, 255)),
+                      fontSize: 32,
+                      color: const Color.fromARGB(246, 255, 255, 255)),
                 ),
                 Text(
                   'Maua',
@@ -76,7 +82,7 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: ((context) {
-                        return const StudentMainPage();
+                        return const LoadingScreenLogin();
                       })));
                     },
                     child: Text('Login')),

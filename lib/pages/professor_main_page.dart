@@ -1,16 +1,14 @@
-import 'package:diz_ai_maua/pages/professor_main_page.dart';
+import 'package:diz_ai_maua/widgets/navbar_professor.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/navbar_student.dart';
-
-class StudentMainPage extends StatelessWidget {
-  const StudentMainPage({Key? key}) : super(key: key);
+class ProfessorMainPage extends StatelessWidget {
+  const ProfessorMainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(247, 247, 247, 10),
-      drawer: const NavBarStudent(),
+      drawer: const NavBarProfessor(),
       appBar: AppBar(
           automaticallyImplyLeading: false,
           elevation: 0,
@@ -26,8 +24,8 @@ class StudentMainPage extends StatelessWidget {
             children: [
               Builder(builder: (context) {
                 return IconButton(
-                  icon: Icon(Icons.account_circle),
-                  color: Color.fromRGBO(5, 37, 102, 10),
+                  icon: const Icon(Icons.account_circle),
+                  color: const Color.fromRGBO(5, 37, 102, 10),
                   iconSize: 38,
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
@@ -49,7 +47,7 @@ class StudentMainPage extends StatelessWidget {
                                 color: Color.fromRGBO(7, 51, 140, 10))),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 4),
-                          child: Text('Rodrigo!!',
+                          child: Text('Hector Guerrini!!',
                               style: TextStyle(
                                 fontFamily: 'Supreme',
                                 fontSize: 15,
@@ -59,7 +57,7 @@ class StudentMainPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    const Text('Eng da Computação',
+                    const Text('Professor',
                         style: TextStyle(
                           fontFamily: 'Supreme',
                           fontSize: 15,
@@ -104,7 +102,7 @@ class StudentMainPage extends StatelessWidget {
                             )),
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 16),
-                          child: Text('Assuntos mais comentados:',
+                          child: Text('Notificação:',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
@@ -114,7 +112,7 @@ class StudentMainPage extends StatelessWidget {
                         const Padding(
                           padding: EdgeInsets.only(bottom: 24, left: 8),
                           child: Text(
-                              '•   Fenomenos de Transporte se tornará Bimestral ?',
+                              '•   Os feedbacks da turma de Resistência dos Materiais está disponível',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
@@ -136,7 +134,7 @@ class StudentMainPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(30),
                                 )),
                               ),
-                              child: const Text('VEJA O RELATÓRIO COMPLETO',
+                              child: const Text('VEJA MAIS FEEDBACKS',
                                   style: TextStyle(fontSize: 18)),
                             ),
                           ),
@@ -146,6 +144,9 @@ class StudentMainPage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 16, bottom: 16),
@@ -159,21 +160,14 @@ class StudentMainPage extends StatelessWidget {
                         style: TextStyle(
                             fontFamily: 'Supreme',
                             fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                            fontSize: 24,
                             color: Color.fromRGBO(8, 62, 167, 10)),
-                      )),
-                  TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Respondidos',
-                        style: TextStyle(
-                            fontFamily: 'Supreme',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Color.fromRGBO(8, 62, 167, 150)),
                       )),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Column(
               children: [
@@ -182,15 +176,27 @@ class StudentMainPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SizedBox(
+                      Container(
                         height: 200,
                         width: 158,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromRGBO(31, 222, 145, 50),
+                              Color.fromRGBO(12, 89, 242, 50),
+                              Color.fromRGBO(5, 37, 102, 50)
+                            ],
+                          ),
+                        ),
                         child: ElevatedButton(
                             onPressed: () {},
                             style: ButtonStyle(
                               elevation: MaterialStateProperty.all<double>(0),
-                              backgroundColor: MaterialStateProperty.all(
-                                  const Color.fromRGBO(224, 232, 247, 10)),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.transparent),
                               shape: MaterialStateProperty.all<
                                       RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
@@ -210,37 +216,33 @@ class StudentMainPage extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(30.0),
                                         color: const Color.fromRGBO(
-                                            181, 204, 246, 10)),
-                                    child: const Icon(Icons.safety_check,
-                                        color: Color.fromRGBO(8, 62, 167, 10)),
+                                            12, 89, 242, 80)),
+                                    child: const Icon(Icons.add,
+                                        color: Colors.white),
                                   ),
                                 ),
                                 const Padding(
                                   padding: EdgeInsets.only(bottom: 4),
-                                  child: Text('ETE802',
+                                  child: Text('Criar um questionário',
                                       style: TextStyle(
                                           fontSize: 16,
                                           fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(9, 65, 179, 10))),
+                                          color: Colors.white)),
                                 ),
-                                const Text('Fenômenos de Transporte',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Supreme',
-                                        color: Color.fromRGBO(9, 65, 179, 10))),
                                 const Center(
                                   child: Padding(
                                     padding:
-                                        EdgeInsets.only(top: 24, bottom: 2),
-                                    child: Text('Fecha em 7 dias...',
+                                        EdgeInsets.only(top: 16, bottom: 2),
+                                    child: Text(
+                                        'Matérias com questionário pronto:',
                                         style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                9, 65, 179, 10))),
+                                            color: Colors.white)),
                                   ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
                                 ),
                                 Container(
                                   height: 6,
@@ -263,18 +265,11 @@ class StudentMainPage extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: const [
-                                    Text('50',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                12, 89, 242, 10))),
-                                    Text('pessoas ja respoderam!!',
+                                    Text('Faltam apenas 2 ...',
                                         style: TextStyle(
                                             fontSize: 10,
                                             fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                12, 89, 242, 10)))
+                                            color: Colors.white))
                                   ],
                                 )
                               ],
@@ -332,7 +327,7 @@ class StudentMainPage extends StatelessWidget {
                                   child: Padding(
                                     padding:
                                         EdgeInsets.only(top: 24, bottom: 2),
-                                    child: Text('Fecha em 3 dias...',
+                                    child: Text('Em análise...',
                                         style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Supreme',
@@ -432,7 +427,7 @@ class StudentMainPage extends StatelessWidget {
                               const Center(
                                 child: Padding(
                                   padding: EdgeInsets.only(top: 5, bottom: 2),
-                                  child: Text('Fecha em 9 dias...',
+                                  child: Text('Em análise...',
                                       style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Supreme',
@@ -524,7 +519,7 @@ class StudentMainPage extends StatelessWidget {
                               const Center(
                                 child: Padding(
                                   padding: EdgeInsets.only(top: 43, bottom: 2),
-                                  child: Text('Fecha em 13 dias...',
+                                  child: Text('Em análise...',
                                       style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Supreme',
@@ -564,23 +559,12 @@ class StudentMainPage extends StatelessWidget {
                                           color:
                                               Color.fromRGBO(12, 89, 242, 10)))
                                 ],
-                              ),
+                              )
                             ],
                           )),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 50,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: ((context) {
-                        return const ProfessorMainPage();
-                      })));
-                    },
-                    child: const Text('Professor page')),
               ],
             ),
           ],
