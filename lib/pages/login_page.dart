@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'dart:ui';
 
 import 'package:diz_ai_maua/pages/loading_screen_for_login.dart';
@@ -105,6 +106,25 @@ class LoginPage extends StatelessWidget {
                       child: Text('Registre-se',
                           style: GoogleFonts.inter(
                               color: darkBlue, fontWeight: FontWeight.bold)))
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 130),
+                child: Text('Versão 1.0.0',
+                    style: GoogleFonts.inter(
+                        color: darkBlue, fontWeight: FontWeight.w300)),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.copyright_rounded,
+                    size: 20,
+                    color: darkBlue,
+                  ),
+                  Text('DizAiMaua',
+                      style: GoogleFonts.inter(
+                          color: darkBlue, fontWeight: FontWeight.w300))
                 ],
               )
             ],

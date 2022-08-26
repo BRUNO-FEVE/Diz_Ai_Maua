@@ -10,7 +10,7 @@ class DizAi extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diz Aí Maua!!',
-      home: LoadingScreen(),
+      home: LoginPage(),
     );
   }
 }
