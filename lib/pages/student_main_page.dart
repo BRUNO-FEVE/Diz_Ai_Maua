@@ -176,6 +176,7 @@ class StudentMainPage extends StatelessWidget {
               ),
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 16),
@@ -183,7 +184,7 @@ class StudentMainPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       SizedBox(
-                        height: 200,
+                        height: 210,
                         width: 158,
                         child: ElevatedButton(
                             onPressed: () {},
@@ -281,7 +282,7 @@ class StudentMainPage extends StatelessWidget {
                             )),
                       ),
                       SizedBox(
-                        height: 200,
+                        height: 210,
                         width: 158,
                         child: ElevatedButton(
                             onPressed: () {},
@@ -385,7 +386,7 @@ class StudentMainPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     SizedBox(
-                      height: 200,
+                      height: 210,
                       width: 158,
                       child: ElevatedButton(
                           onPressed: () {},
@@ -477,7 +478,7 @@ class StudentMainPage extends StatelessWidget {
                           )),
                     ),
                     SizedBox(
-                      height: 200,
+                      height: 210,
                       width: 158,
                       child: ElevatedButton(
                           onPressed: () {},
@@ -570,17 +571,6 @@ class StudentMainPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 50,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: ((context) {
-                        return const ProfessorMainPage();
-                      })));
-                    },
-                    child: const Text('Professor page')),
               ],
             ),
           ],
