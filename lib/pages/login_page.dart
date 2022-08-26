@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:diz_ai_maua/pages/loading_screen_for_login.dart';
 import 'package:diz_ai_maua/pages/student_main_page.dart';
 import 'package:flutter/material.dart';
@@ -7,141 +9,107 @@ import 'package:google_fonts/google_fonts.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  static const darkBlue = Color.fromRGBO(5, 37, 102, 10);
+  static const lightGreen = Color.fromRGBO(31, 222, 145, 10);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(9, 65, 179, 20),
-      body: Container(
-        child: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 150,
+        backgroundColor: const Color.fromRGBO(247, 247, 247, 10),
+        body: Center(
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 135),
+                child: Icon(FontAwesomeIcons.paperPlane,
+                    size: 80, color: darkBlue),
+              ),
+              Text('Diz Ai',
+                  style: GoogleFonts.pacifico(fontSize: 24, color: darkBlue)),
+              Text('Maua',
+                  style: GoogleFonts.pacifico(fontSize: 16, color: darkBlue)),
+              Padding(
+                padding: const EdgeInsets.only(top: 32),
+                child: Text('Compartilhe seus feedbacks conosco!',
+                    style: GoogleFonts.inter(fontSize: 16, color: darkBlue)),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 120, bottom: 16),
+                child: SizedBox(
+                  width: 319,
+                  child: TextFormField(
+                    style: const TextStyle(color: darkBlue),
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: TextStyle(color: darkBlue)),
+                  ),
                 ),
-                const SizedBox(
-                    width: 200,
-                    height: 100,
-                    child: Icon(
-                      FontAwesomeIcons.paperPlane,
-                      color: Colors.white,
-                      size: 90,
-                    )),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Diz Aí',
-                  style: GoogleFonts.pacifico(
-                      fontSize: 32,
-                      color: const Color.fromARGB(246, 255, 255, 255)),
-                ),
-                Text(
-                  'Maua',
-                  style: GoogleFonts.pacifico(
-                      fontSize: 16, color: Color.fromARGB(246, 255, 255, 255)),
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
-                const Text(
-                  'Compartilhe seus feedbacks conosco!',
-                  style: TextStyle(
-                      fontFamily: 'Supreme',
-                      fontSize: 16,
-                      color: Color.fromARGB(246, 255, 255, 255)),
-                ),
-                const SizedBox(
-                  height: 140,
-                ),
-                TextFormField(
-                  style: TextStyle(color: Colors.white),
+              ),
+              SizedBox(
+                width: 319,
+                child: TextFormField(
+                  style: const TextStyle(color: darkBlue),
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                      labelText: 'Email',
-                      labelStyle: TextStyle(color: Colors.white)),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  style: TextStyle(color: Colors.white),
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      hoverColor: Colors.white,
+                  decoration: const InputDecoration(
                       labelText: 'Password',
-                      labelStyle: TextStyle(color: Colors.white)),
+                      labelStyle: TextStyle(color: darkBlue)),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: ((context) {
-                        return const LoadingScreenLogin();
-                      })));
-                    },
-                    child: Text('Login')),
-                const SizedBox(
-                  height: 22,
-                ),
-                Row(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      width: 105,
-                    ),
-                    const Text(
-                      'Não possui conta?',
-                      style: TextStyle(
-                          fontFamily: 'Supreme',
-                          fontSize: 16,
-                          color: Color.fromARGB(246, 255, 255, 255)),
-                    ),
+                    Text('Esqueceu sua senha?',
+                        style: GoogleFonts.inter(color: darkBlue)),
                     TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Registre-se',
-                        style: TextStyle(
-                            fontFamily: 'Supreme',
-                            fontSize: 16,
-                            color: Color.fromARGB(246, 31, 222, 145)),
-                      ),
-                    )
+                        onPressed: () {},
+                        child: Text('Clique Aqui',
+                            style: GoogleFonts.inter(
+                                color: lightGreen,
+                                fontWeight: FontWeight.bold)))
                   ],
                 ),
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 90,
-                    ),
-                    const Text(
-                      'Esqueceu sua senha?',
-                      style: TextStyle(
-                          fontFamily: 'Supreme',
-                          fontSize: 16,
-                          color: Color.fromARGB(246, 255, 255, 255)),
-                    ),
-                    TextButton(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 32, bottom: 4),
+                child: SizedBox(
+                    width: 319,
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                          elevation: MaterialStateProperty.all<double>(0),
+                          backgroundColor:
+                              MaterialStateProperty.all(lightGreen),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )),
+                        ),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: ((context) {
+                            return const LoadingScreenLogin();
+                          })));
+                        },
+                        child: const Text('Login',
+                            style: TextStyle(fontSize: 16)))),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Não possui conta?',
+                      style: GoogleFonts.inter(color: darkBlue)),
+                  TextButton(
                       onPressed: () {},
-                      child: const Text(
-                        'Clique aqui!',
-                        style: TextStyle(
-                            fontFamily: 'Supreme',
-                            fontSize: 16,
-                            color: Color.fromARGB(246, 31, 222, 145)),
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
+                      child: Text('Registre-se',
+                          style: GoogleFonts.inter(
+                              color: lightGreen, fontWeight: FontWeight.bold)))
+                ],
+              )
+            ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

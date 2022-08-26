@@ -26,8 +26,8 @@ class StudentMainPage extends StatelessWidget {
             children: [
               Builder(builder: (context) {
                 return IconButton(
-                  icon: Icon(Icons.account_circle),
-                  color: Color.fromRGBO(5, 37, 102, 10),
+                  icon: const Icon(Icons.account_circle),
+                  color: const Color.fromRGBO(5, 37, 102, 10),
                   iconSize: 38,
                   onPressed: () {
                     Scaffold.of(context).openDrawer();

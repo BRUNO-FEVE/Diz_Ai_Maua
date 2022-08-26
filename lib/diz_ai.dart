@@ -1,4 +1,5 @@
 import 'package:diz_ai_maua/pages/loading_screen.dart';
+import 'package:diz_ai_maua/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class DizAi extends StatelessWidget {
