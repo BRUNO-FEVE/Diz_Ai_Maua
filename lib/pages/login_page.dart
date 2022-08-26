@@ -67,8 +67,7 @@ class LoginPage extends StatelessWidget {
                         onPressed: () {},
                         child: Text('Clique Aqui',
                             style: GoogleFonts.inter(
-                                color: lightGreen,
-                                fontWeight: FontWeight.bold)))
+                                color: darkBlue, fontWeight: FontWeight.bold)))
                   ],
                 ),
               ),
@@ -105,7 +104,7 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {},
                       child: Text('Registre-se',
                           style: GoogleFonts.inter(
-                              color: lightGreen, fontWeight: FontWeight.bold)))
+                              color: darkBlue, fontWeight: FontWeight.bold)))
                 ],
               )
             ],
