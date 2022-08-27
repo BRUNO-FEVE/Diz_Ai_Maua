@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:diz_ai_maua/themes/app_colors.dart';
+import 'package:diz_ai_maua/themes/app_colors.dart'; // Colors
 
 class CalculoIICard extends StatelessWidget {
   const CalculoIICard({Key? key}) : super(key: key);
