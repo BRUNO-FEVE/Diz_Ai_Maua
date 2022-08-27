@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AnswerScreen extends StatelessWidget {
+  const AnswerScreen({Key? key}) : super(key: key);
+
+  static const backgroundColor = Color.fromRGBO(247, 247, 247, 10);
+  static const backgroundColorAppBar = Color.fromRGBO(17, 69, 170, 10);
+  static const lightGreen = Color.fromRGBO(31, 222, 145, 10);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: backgroundColor,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(91),
+          child: AppBar(
+            backgroundColor: backgroundColorAppBar,
+            automaticallyImplyLeading: false,
+            centerTitle: true,
+            title: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text('Você selecionou: ',
+                      style: GoogleFonts.inter(
+                        fontSize: 18,
+                        color: lightGreen,
+                      )),
+                ),
+                Text(
+                  'EFB206 - Física II',
+                  style: GoogleFonts.inter(fontSize: 30),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+}
