@@ -39,3 +39,128 @@ class AnswerScreen extends StatelessWidget {
         ));
   }
 }
+
+
+
+
+
+
+
+
+
+focusedBorder: OutlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: darkBlue, width: 1)),
+
+
+
+
+
+
+
+
+
+
+                                        Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+              child: Container(
+                  height: 280,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: lightBlue,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                            height: 34,
+                            width: 34,
+                            decoration: BoxDecoration(
+                                color: backgroundColorAppBar,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Center(
+                              child: Text('1',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white)),
+                            )),
+                        Text(
+                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis massa id nulla commodo, in mollis purus porttitor. Nulla porttitor mi enim, sed sollicitudin sem cursus eget. In id ornare nibh, eget viverra nisl. Quisque ex ipsum, fermentum: ',
+                          style: GoogleFonts.inter(fontSize: 15),
+                        ),
+                        Container(
+                            height: 100,
+                            width: double.infinity,
+                            color: backgroundColor,
+                            child: const TextField(
+                              minLines: 4,
+                              maxLines: 4,
+                              decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(color: darkBlue)),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: backgroundColorAppBar,
+                                          width: 1.1)),
+                                  labelText: 'Digite Aqui:',
+                                  labelStyle: TextStyle(
+                                    color: darkBlue,
+                                  ),
+                                  alignLabelWithHint: true),
+                            ))
+                      ],
+                    ),
+                  )))
+
+
+
+
+
+
+
+
+
+                  Container(
+                            height: 34,
+                            width: 34,
+                            decoration: BoxDecoration(
+                                color: backgroundColorAppBar,
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Center(
+                              child: Text('1',
+                                  style: GoogleFonts.inter(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white)),
+                            )),
+
+
+
+
+
+
+
+                            Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+            child: SizedBox(
+              width: double.infinity,
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                    height: 34,
+                    width: 34,
+                    decoration: BoxDecoration(
+                        color: backgroundColorAppBar,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Center(
+                      child: Text('1',
+                          style: GoogleFonts.inter(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white)),
+                    )),
+              ),
+              
+            ),
+          )

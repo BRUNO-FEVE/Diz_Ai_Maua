@@ -1,60 +1,61 @@
-import 'dart:html';
-import 'dart:ui';
-
-import 'package:diz_ai_maua/pages/loading_screen_for_login.dart';
-import 'package:diz_ai_maua/pages/student_main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:diz_ai_maua/themes/app_colors.dart'; // Colors
+
+// Pages
+import 'package:diz_ai_maua/pages/loading_pages/loading_screen_for_login.dart';
+import 'package:diz_ai_maua/pages/student_main_page.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
-
-  static const darkBlue = Color.fromRGBO(5, 37, 102, 10);
-  static const lightGreen = Color.fromRGBO(31, 222, 145, 10);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromRGBO(247, 247, 247, 10),
+        backgroundColor: AppColors.backgroundColor,
         body: Center(
           child: Column(
             children: [
               const Padding(
                 padding: EdgeInsets.only(top: 135),
                 child: Icon(FontAwesomeIcons.paperPlane,
-                    size: 80, color: darkBlue),
+                    size: 80, color: AppColors.darkBlue),
               ),
               Text('Diz Ai',
-                  style: GoogleFonts.pacifico(fontSize: 24, color: darkBlue)),
+                  style: GoogleFonts.pacifico(
+                      fontSize: 24, color: AppColors.darkBlue)),
               Text('Maua',
-                  style: GoogleFonts.pacifico(fontSize: 16, color: darkBlue)),
+                  style: GoogleFonts.pacifico(
+                      fontSize: 16, color: AppColors.darkBlue)),
               Padding(
                 padding: const EdgeInsets.only(top: 32),
                 child: Text('Compartilhe seus feedbacks conosco!',
-                    style: GoogleFonts.inter(fontSize: 16, color: darkBlue)),
+                    style: GoogleFonts.inter(
+                        fontSize: 16, color: AppColors.darkBlue)),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 120, bottom: 16),
                 child: SizedBox(
                   width: 319,
                   child: TextFormField(
-                    style: const TextStyle(color: darkBlue),
+                    style: const TextStyle(color: AppColors.darkBlue),
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
                         labelText: 'Email',
-                        labelStyle: TextStyle(color: darkBlue)),
+                        labelStyle: TextStyle(color: AppColors.darkBlue)),
                   ),
                 ),
               ),
               SizedBox(
                 width: 319,
                 child: TextFormField(
-                  style: const TextStyle(color: darkBlue),
+                  style: const TextStyle(color: AppColors.darkBlue),
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
                       labelText: 'Password',
-                      labelStyle: TextStyle(color: darkBlue)),
+                      labelStyle: TextStyle(color: AppColors.darkBlue)),
                 ),
               ),
               Padding(
@@ -63,12 +64,13 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Esqueceu sua senha?',
-                        style: GoogleFonts.inter(color: darkBlue)),
+                        style: GoogleFonts.inter(color: AppColors.darkBlue)),
                     TextButton(
                         onPressed: () {},
                         child: Text('Clique Aqui',
                             style: GoogleFonts.inter(
-                                color: darkBlue, fontWeight: FontWeight.bold)))
+                                color: AppColors.darkBlue,
+                                fontWeight: FontWeight.bold)))
                   ],
                 ),
               ),
@@ -80,7 +82,7 @@ class LoginPage extends StatelessWidget {
                         style: ButtonStyle(
                           elevation: MaterialStateProperty.all<double>(0),
                           backgroundColor:
-                              MaterialStateProperty.all(lightGreen),
+                              MaterialStateProperty.all(AppColors.lightGreen),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
@@ -100,19 +102,21 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Não possui conta?',
-                      style: GoogleFonts.inter(color: darkBlue)),
+                      style: GoogleFonts.inter(color: AppColors.darkBlue)),
                   TextButton(
                       onPressed: () {},
                       child: Text('Registre-se',
                           style: GoogleFonts.inter(
-                              color: darkBlue, fontWeight: FontWeight.bold)))
+                              color: AppColors.darkBlue,
+                              fontWeight: FontWeight.bold)))
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 130),
                 child: Text('Versão 1.0.0',
                     style: GoogleFonts.inter(
-                        color: darkBlue, fontWeight: FontWeight.w300)),
+                        color: AppColors.darkBlue,
+                        fontWeight: FontWeight.w300)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -120,11 +124,12 @@ class LoginPage extends StatelessWidget {
                   const Icon(
                     Icons.copyright_rounded,
                     size: 20,
-                    color: darkBlue,
+                    color: AppColors.darkBlue,
                   ),
                   Text('DizAiMaua',
                       style: GoogleFonts.inter(
-                          color: darkBlue, fontWeight: FontWeight.w300))
+                          color: AppColors.darkBlue,
+                          fontWeight: FontWeight.w300))
                 ],
               )
             ],

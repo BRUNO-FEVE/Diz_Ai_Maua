@@ -3,23 +3,31 @@ import 'package:flutter/material.dart';
 
 import '../widgets/navbar_student.dart';
 
+// Subjects Cards
+import 'package:diz_ai_maua/widgets/subject_cards/FT_card_widget.dart';
+import 'package:diz_ai_maua/widgets/subject_cards/RESMAT_card_widget.dart';
+import 'package:diz_ai_maua/widgets/subject_cards/CALII_card_widget.dart';
+import 'package:diz_ai_maua/widgets/subject_cards/FISII_card_widget.dart';
+
+// Colors
+import 'package:diz_ai_maua/themes/app_colors.dart';
+
 class StudentMainPage extends StatelessWidget {
   const StudentMainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(247, 247, 247, 10),
+      backgroundColor: AppColors.backgroundColor,
       drawer: const NavBarStudent(),
       appBar: AppBar(
           automaticallyImplyLeading: false,
           elevation: 0,
-          backgroundColor: const Color.fromRGBO(247, 247, 247, 10),
+          backgroundColor: AppColors.backgroundColor,
           actions: const [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(Icons.brightness_5,
-                  color: Color.fromRGBO(7, 51, 140, 10)),
+              child: Icon(Icons.brightness_5, color: AppColors.mediumBlue),
             )
           ],
           title: Row(
@@ -27,7 +35,7 @@ class StudentMainPage extends StatelessWidget {
               Builder(builder: (context) {
                 return IconButton(
                   icon: const Icon(Icons.account_circle),
-                  color: const Color.fromRGBO(5, 37, 102, 10),
+                  color: AppColors.darkBlue,
                   iconSize: 38,
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
@@ -46,7 +54,7 @@ class StudentMainPage extends StatelessWidget {
                                 fontFamily: 'Supreme',
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(7, 51, 140, 10))),
+                                color: AppColors.mediumBlue)),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 4),
                           child: Text('Rodrigo!!',
@@ -54,7 +62,7 @@ class StudentMainPage extends StatelessWidget {
                                 fontFamily: 'Supreme',
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(31, 222, 145, 10),
+                                color: AppColors.lightGreen,
                               )),
                         )
                       ],
@@ -63,7 +71,7 @@ class StudentMainPage extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Supreme',
                           fontSize: 15,
-                          color: Color.fromRGBO(7, 51, 140, 10),
+                          color: AppColors.mediumBlue,
                         )),
                   ],
                 ),
@@ -74,17 +82,12 @@ class StudentMainPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30.0),
-                gradient: const LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color.fromRGBO(8, 62, 157, 10),
-                      Color.fromRGBO(198, 209, 231, 10)
-                    ]),
+                gradient: AppColors.gradient, // Gradient
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -100,7 +103,7 @@ class StudentMainPage extends StatelessWidget {
                         const Text('21 de Julho de 2022',
                             style: TextStyle(
                               fontSize: 15,
-                              color: Color.fromRGBO(247, 247, 247, 80),
+                              color: AppColors.lightGray,
                             )),
                         const Padding(
                           padding: EdgeInsets.symmetric(vertical: 16),
@@ -129,7 +132,7 @@ class StudentMainPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all<double>(0),
                                 backgroundColor: MaterialStateProperty.all(
-                                    const Color.fromRGBO(31, 222, 145, 10)),
+                                    AppColors.lightGreen),
                                 shape: MaterialStateProperty.all<
                                         RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
@@ -147,429 +150,46 @@ class StudentMainPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16, bottom: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Disponíveis',
-                        style: TextStyle(
-                            fontFamily: 'Supreme',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Color.fromRGBO(8, 62, 167, 10)),
-                      )),
-                  TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Respondidos',
-                        style: TextStyle(
-                            fontFamily: 'Supreme',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Color.fromRGBO(8, 62, 167, 150)),
-                      )),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Disponíveis',
+                      style: TextStyle(
+                          fontFamily: 'Supreme',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: AppColors.mediumBlueII),
+                    )),
+                TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Respondidos',
+                      style: TextStyle(
+                          fontFamily: 'Supreme',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: AppColors.lightBlueIII),
+                    )),
+              ],
             ),
             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      SizedBox(
-                        height: 210,
-                        width: 158,
-                        child: ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              elevation: MaterialStateProperty.all<double>(0),
-                              backgroundColor: MaterialStateProperty.all(
-                                  const Color.fromRGBO(224, 232, 247, 10)),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              )),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 24, bottom: 8, left: 4),
-                                  child: Container(
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
-                                        color: const Color.fromRGBO(
-                                            181, 204, 246, 10)),
-                                    child: const Icon(Icons.safety_check,
-                                        color: Color.fromRGBO(8, 62, 167, 10)),
-                                  ),
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.only(bottom: 4),
-                                  child: Text('ETE802',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(9, 65, 179, 10))),
-                                ),
-                                const Text('Fenômenos de Transporte',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Supreme',
-                                        color: Color.fromRGBO(9, 65, 179, 10))),
-                                const Center(
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.only(top: 24, bottom: 2),
-                                    child: Text('Fecha em 7 dias...',
-                                        style: TextStyle(
-                                            fontSize: 13,
-                                            fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                9, 65, 179, 10))),
-                                  ),
-                                ),
-                                Container(
-                                  height: 6,
-                                  width: 130,
-                                  alignment: Alignment.bottomLeft,
-                                  decoration: BoxDecoration(
-                                      color:
-                                          const Color.fromRGBO(8, 62, 167, 10),
-                                      borderRadius:
-                                          BorderRadius.circular(30.0)),
-                                  child: Container(
-                                      height: 6,
-                                      width: 65,
-                                      decoration: BoxDecoration(
-                                          color: const Color.fromRGBO(
-                                              31, 222, 145, 10),
-                                          borderRadius:
-                                              BorderRadius.circular(30.0))),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Text('50',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                12, 89, 242, 10))),
-                                    Text('pessoas ja respoderam!!',
-                                        style: TextStyle(
-                                            fontSize: 10,
-                                            fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                12, 89, 242, 10)))
-                                  ],
-                                )
-                              ],
-                            )),
-                      ),
-                      SizedBox(
-                        height: 210,
-                        width: 158,
-                        child: ElevatedButton(
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              elevation: MaterialStateProperty.all<double>(0),
-                              backgroundColor: MaterialStateProperty.all(
-                                  const Color.fromRGBO(224, 232, 247, 10)),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              )),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 24, bottom: 8, left: 4),
-                                  child: Container(
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(30.0),
-                                        color: const Color.fromRGBO(
-                                            181, 204, 246, 10)),
-                                    child: const Icon(Icons.safety_check,
-                                        color: Color.fromRGBO(8, 62, 167, 10)),
-                                  ),
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.only(bottom: 4),
-                                  child: Text('ETE702',
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(9, 65, 179, 10))),
-                                ),
-                                const Text('Resistência dos Materiais',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Supreme',
-                                        color: Color.fromRGBO(9, 65, 179, 10))),
-                                const Center(
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.only(top: 24, bottom: 2),
-                                    child: Text('Fecha em 3 dias...',
-                                        style: TextStyle(
-                                            fontSize: 13,
-                                            fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                9, 65, 179, 10))),
-                                  ),
-                                ),
-                                Container(
-                                  height: 6,
-                                  width: 130,
-                                  alignment: Alignment.bottomLeft,
-                                  decoration: BoxDecoration(
-                                      color:
-                                          const Color.fromRGBO(8, 62, 167, 10),
-                                      borderRadius:
-                                          BorderRadius.circular(30.0)),
-                                  child: Container(
-                                      height: 6,
-                                      width: 92,
-                                      decoration: BoxDecoration(
-                                          color: const Color.fromRGBO(
-                                              31, 222, 145, 10),
-                                          borderRadius:
-                                              BorderRadius.circular(30.0))),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Text('90',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                12, 89, 242, 10))),
-                                    Text('pessoas ja respoderam!!',
-                                        style: TextStyle(
-                                            fontSize: 10,
-                                            fontFamily: 'Supreme',
-                                            color: Color.fromRGBO(
-                                                12, 89, 242, 10)))
-                                  ],
-                                )
-                              ],
-                            )),
-                      ),
-                    ],
+                    children: const [
+                      FtCard(),
+                      ResmatCard()
+                    ], // FT and RESMAT cards
                   ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 210,
-                      width: 158,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            elevation: MaterialStateProperty.all<double>(0),
-                            backgroundColor: MaterialStateProperty.all(
-                                const Color.fromRGBO(224, 232, 247, 10)),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            )),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 24, bottom: 8, left: 4),
-                                child: Container(
-                                  height: 40,
-                                  width: 40,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30.0),
-                                      color: const Color.fromRGBO(
-                                          181, 204, 246, 10)),
-                                  child: const Icon(Icons.safety_check,
-                                      color: Color.fromRGBO(8, 62, 167, 10)),
-                                ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 4),
-                                child: Text('EFB109',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontFamily: 'Supreme',
-                                        color: Color.fromRGBO(9, 65, 179, 10))),
-                              ),
-                              const Text('Cálculo Diferencial e Integral II',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Supreme',
-                                      color: Color.fromRGBO(9, 65, 179, 10))),
-                              const Center(
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 5, bottom: 2),
-                                  child: Text('Fecha em 9 dias...',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(9, 65, 179, 10))),
-                                ),
-                              ),
-                              Container(
-                                height: 6,
-                                width: 130,
-                                alignment: Alignment.bottomLeft,
-                                decoration: BoxDecoration(
-                                    color: const Color.fromRGBO(8, 62, 167, 10),
-                                    borderRadius: BorderRadius.circular(30.0)),
-                                child: Container(
-                                    height: 6,
-                                    width: 43,
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromRGBO(
-                                            31, 222, 145, 10),
-                                        borderRadius:
-                                            BorderRadius.circular(30.0))),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text('70',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(12, 89, 242, 10))),
-                                  Text('pessoas ja respoderam!!',
-                                      style: TextStyle(
-                                          fontSize: 10,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(12, 89, 242, 10)))
-                                ],
-                              )
-                            ],
-                          )),
-                    ),
-                    SizedBox(
-                      height: 210,
-                      width: 158,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            elevation: MaterialStateProperty.all<double>(0),
-                            backgroundColor: MaterialStateProperty.all(
-                                const Color.fromRGBO(224, 232, 247, 10)),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            )),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 24, bottom: 8, left: 4),
-                                child: Container(
-                                  height: 40,
-                                  width: 40,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30.0),
-                                      color: const Color.fromRGBO(
-                                          181, 204, 246, 10)),
-                                  child: const Icon(Icons.safety_check,
-                                      color: Color.fromRGBO(8, 62, 167, 10)),
-                                ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 4),
-                                child: Text('EFB206',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontFamily: 'Supreme',
-                                        color: Color.fromRGBO(9, 65, 179, 10))),
-                              ),
-                              const Text('Física II',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Supreme',
-                                      color: Color.fromRGBO(9, 65, 179, 10))),
-                              const Center(
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 43, bottom: 2),
-                                  child: Text('Fecha em 13 dias...',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(9, 65, 179, 10))),
-                                ),
-                              ),
-                              Container(
-                                height: 6,
-                                width: 130,
-                                alignment: Alignment.bottomLeft,
-                                decoration: BoxDecoration(
-                                    color: const Color.fromRGBO(8, 62, 167, 10),
-                                    borderRadius: BorderRadius.circular(30.0)),
-                                child: Container(
-                                    height: 6,
-                                    width: 9,
-                                    decoration: BoxDecoration(
-                                        color: const Color.fromRGBO(
-                                            31, 222, 145, 10),
-                                        borderRadius:
-                                            BorderRadius.circular(30.0))),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Text('40',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(12, 89, 242, 10))),
-                                  Text('pessoas ja respoderam!!',
-                                      style: TextStyle(
-                                          fontSize: 10,
-                                          fontFamily: 'Supreme',
-                                          color:
-                                              Color.fromRGBO(12, 89, 242, 10)))
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                  ],
+                  children: const [CalculoIICard(), FisIICard()],
                 ),
               ],
             ),
